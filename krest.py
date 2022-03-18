@@ -90,7 +90,7 @@ while not gameover:
         if event.type==pg.QUIT:
             gameover=True
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_r:
+            if event.key == pg.K_r and gameover == True:
                 start_game()
             elif event.key == pg.K_q:
                 gameover = True
