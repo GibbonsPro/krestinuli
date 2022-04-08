@@ -23,7 +23,7 @@
                 });
                
                function init(){
-                fields = [0,0,0,0,0,0,0,0,0];
+                fields = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
                 firstStep = rand(0,fields.length-1);
                 //инициализация массива исходных ходов
                 fields[firstStep] = 1;
@@ -76,16 +76,16 @@
                function checkWin(fields, sym){
                 var flag = true, tmp = [], sum = 0;
                 //приобразуем линейный массив в двумерный для упрощения пробега
-                for(var i = 0; i < 3; i++){
+                for(var i = 0; i < 5; i++){
                  tmp[i] = [];
-                 for(var j = 0; j < 3; j++){
+                 for(var j = 0; j < 5; j++){
                   tmp[i][j] = fields[i*3+j];
                  }
                 }
                 //пробегаем по горизонтали
-                for(var i = 0; i < 3; i++){
+                for(var i = 0; i < 5; i++){
                  flag = true;
-                  for(var j = 0; j < 3; j++){
+                  for(var j = 0; j < 5; j++){
                    if( tmp[i][j] != sym )
                     flag = false;
                   }
@@ -93,9 +93,9 @@
                }
                
                //пробегаем по вертикали
-               for(var i = 0; i < 3; i++){
+               for(var i = 0; i < 5; i++){
                 flag = true;
-                for(var j = 0; j < 3; j++){
+                for(var j = 0; j < 5; j++){
                  if( tmp[j][i] != sym )
                   flag = false;
                  }
@@ -106,10 +106,14 @@
                if(
                 tmp[0][0] == sym &&
                 tmp[1][1] == sym &&
-                tmp[2][2] == sym ||
-                tmp[0][2] == sym &&
-                tmp[1][1] == sym &&
-                tmp[2][0] == sym
+                tmp[2][2] == sym &&
+                tmp[3][3] == sym &&
+                tmp[4][4] == sym ||
+                tmp[0][4] == sym &&
+                tmp[1][3] == sym &&
+                tmp[2][2] == sym &&
+                tmp[3][1] == sym &&
+                tmp[4][0] == sym
                ) return true;
                }
                
@@ -158,30 +162,30 @@
         <h1>Крестики-Нолики</h1>
         <div id="game-krestiki-noliki">
             <div class="game" id='game'>
-                <script>var newA = document.createElement('a');
+                <!-- <script>var newA = document.createElement('a');
                     newA.href = '#';
                     newA.className = 'item';
                     for (var i = 0; i < 9; i++){
+                      console.log(i)
+                      
                         document.getElementById("game").appendChild(newA);
                     }
-                </script>
-                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
+                </script> -->
+                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
+                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
+                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
+                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
+                <a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a><a href="#" class="item"></a>
             </div>
                 <div class="win">
-                 <h2>Вы выиграли!</h2>
-                 <div class="intro">
-                   <script type="text/javascript" src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
-                    <script type="text/javascript" src="http://yastatic.net/share2/share.js" charset="utf-8"></script>
-                    <div class="ya-share2" data-services="vkontakte,facebook,gplus,twitter,odnoklassniki" data-size="s"></div>
-                   <a href="#" class="close">х</a>
-                 </div>
+                 <h2>Вы выиграли! Обновите страницу</h2>
+
                 </div>
                 <div class="lost">
-                 <h2>Выиграл компьютер</h2>
-                 <div class="intro">
-                   <a href="#" class="next">Еще</a>       
-                   <a href="#" class="close">х</a>
-                </div>
+                 <h2>Выиграл компьютер. Обновите страницу</h2>
+                        
+                   
+                
         </div>
         </div>
     </body>
